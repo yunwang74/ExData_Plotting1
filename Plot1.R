@@ -1,0 +1,5 @@
+hist(s$Global_active_power,freq=TRUE,col="red",xlab="Global Active Power(kilowatts)",ylab="Frequency",xaxt="n",yaxt="n",main="Global Active Power")
+axis(side=2,at=seq(0,1200,200))
+axis(side=1,at=NULL)
+dev.copy(png,filename="Plot1.png",height=480, width=480,bg="transparent")
+dev.off()

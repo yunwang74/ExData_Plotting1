@@ -1,0 +1,6 @@
+plot(s$DateTime, s$Sub_metering_1, yaxt="n", xlab="", ylab="Energy Sub metering",type="l")
+lines(s$DateTime, s$Sub_metering_2, col="red")
+lines(s$DateTime, s$Sub_metering_3, col="blue")
+legend("topright",legend=c("sub_metering_1","sub_metering_2","sub_metering_3"),lty=1, col=c("black","red","blue"),cex=0.8)
+dev.copy(png,filename="Plot3.png",height=480, width=480,bg="transparent")
+dev.off()
