@@ -1,3 +1,6 @@
+x<-read.table("household_power_consumption.txt",sep=";", header=T, colClasses = c('character', 'character', 'numeric','numeric', 'numeric', 'numeric','numeric', 'numeric', 'numeric'),na.strings='?')
+x$DateTime <- strptime(paste(x$Date, x$Time),"%d/%m/%Y %H:%M:%S")
+s <- subset(x,as.Date(DateTime) >= as.Date("2007-02-01")&as.Date(DateTime) <= as.Date("2007-02-02"))
 hist(s$Global_active_power,freq=TRUE,col="red",xlab="Global Active Power(kilowatts)",ylab="Frequency",xaxt="n",yaxt="n",main="Global Active Power")
 axis(side=2,at=seq(0,1200,200))
 axis(side=1,at=NULL)
